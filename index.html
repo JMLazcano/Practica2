@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News_Searchbar</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+    <header id="header"></header>
+    <div class="container">
+        <div class="topnav">
+            <h2><u>Search for News:</u></h2>
+            <form method="get" action="/noticias" novalidate>
+            <input type="text" placeholder="Today News.." id="search_bar" name="fname" oninput="noticiassearch($event)">
+            <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="grid clearfix" id="grid">
+            <p>Cargando...</p>
+        </div>
+        
+    </div>
+        <footer>&copy; ITESO</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="assets/scripts/main.js" type="module"></script>
+
+    <script id="header-source" type="text/x-handlebars">
+        <h1>{{title}}</h1>
+    </script>
+
+    <script id="grid-source" type="text/x-handlebars">
+        {{#each news}}
+            <div class="col-2 tb-col-4 mb-col-8 ALIGN">
+                <img src="{{urlToImage}}" />
+                <h2>{{title}}</h2>
+                <p>{{description}}</p>
+                <a href="{{url}}" target="_blank">Learn More...</a>
+            </div>
+        {{/each}}
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+$tablet-size: 500px;
+$desktop-size: 1000px;
+
+@mixin tablet{
+    @media screen and (min-width: $tablet-size) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media screen and (max-width: $tablet-size){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media screen and (min-width: $desktop-size){
+        @content;
+    }
+}
+
+@include tablet {
+    .grid {
+        > .tb-col-12 {
+            float: left;
+            width: 100%;
+            background-color: gainsboro;
+          }
+          
+        > .tb-col-8 {
+            float: left;
+            width: calc(100%/12*8);
+            background-color: lightskyblue;
+          }
+          
+        > .tb-col-6 {
+            float: left;
+            width: calc(100%/2);
+            height: 500px;
+            background-color: lightcoral;
+          }
+          
+        > .tb-col-4 {
+            float: left;
+            width: calc(100%/12*4);
+            height: 600px;
+            background-color: gainsboro;
+            text-shadow: 1px 1px 4px #000000;            
+            
+          }
+          
+        > .tb-col-3 {
+            float: left;
+            width: calc(100%/12*3);
+            background-color: gainsboro;
+          }
+          
+        > .tb-col-2 {
+            float: left;
+            width: calc(100%/12*2);
+            background-color: lightsteelblue;
+          }
+          
+        > .tb-col-1 {
+            float: left;
+            width: calc(100%/12);
+            background-color: cornsilk;
+          }  
+    }
+}
+
+@include mobile {
+    .grid {
+        > .mb-col-12 {
+            float: left;
+            width: 100%;
+            background-color: lightseagreen;
+          }
+          
+        > .mb-col-8 {
+            float: left;
+            width: calc(100%/12*8);
+            height: 600px;
+            background-color: rgb(47, 203, 214);
+            text-shadow: 1px 1px 4px #000000;            
+            
+          }
+          
+        > .mb-col-6 {
+            float: left;
+            width: calc(100%/2);
+            background-color: lightsteelblue;
+          }
+          
+        > .mb-col-4 {
+            float: left;
+            width: calc(100%/12*4);
+            background-color: gainsboro;
+          }
+          
+        > .mb-col-3 {
+            float: left;
+            width: calc(100%/12*3);
+            background-color: gainsboro;
+          }
+          
+        > .mb-col-2 {
+            float: left;
+            width: calc(100%/12*2);
+            background-color: lightsteelblue;
+          }
+          
+        > .mb-col-1 {
+            float: left;
+            width: calc(100%/12);
+            background-color: cornsilk;
+          }  
+    }
+}
+
+@include desktop {
+    .grid {
+        > .col-12 {
+            float: left;
+            width: 100%;
+            background-color: lightseagreen;
+          }
+          
+        > .col-8 {
+            float: left;
+            width: calc(100%/12*8);
+            background-color: lightskyblue;
+          }
+          
+        > .col-6 {
+            float: left;
+            width: calc(100%/2);
+            background-color: lightsteelblue;
+          }
+          
+        > .col-4 {
+            float: left;
+            width: calc(100%/12*4);
+            background-color: lightseagreen;
+          }
+          
+        > .col-3 {
+            float: left;
+            width: calc(100%/12*3);
+            height: 600px;
+            background-color: gainsboro;
+          }
+          
+        > .col-2 {
+            float: left;
+            width: calc(100%/12*2);
+            height: 650px;
+            text-shadow: 1px 1px 4px #000000;            
+            background-color: lightsteelblue;
+          }
+          
+        > .col-1 {
+            float: left;
+            width: calc(100%/12);
+            background-color: cornsilk;
+          }  
+    }
+}
