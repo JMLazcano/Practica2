@@ -1,8 +1,10 @@
 import { News } from './news.js';
-document.getElementById("search_bar").oninput = function () {
+
+document.getElementById("search_bar").onchange = function () {
     const news = new News();
-    news.getAll().then(response => {
-        console.log('News', response.data);
+    const subject = document.getElementById("search_bar").value;
+    news.getAll(subject).then(response => {
+        console.log('News', response.data);        
         let source = document.getElementById('grid-source').innerHTML;
         const context = { news: response.data.articles };
         const template = Handlebars.compile(source);

@@ -4,9 +4,10 @@ const exphbs = require('express-handlebars');
 const nociciasRoutes = require('./app/routes/noticias');
 require('dotenv').config();
 const path = require('path');
-
 let app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
+const axios = require('axios');
+
 
 
 var bodyParser = require('body-parser')
@@ -25,16 +26,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //handlebars
 app.engine('hbs', exphbs({extname: '.ts'}));
 app.set('view engine', 'ts');
+//app.set('view engine', 'handlebars');
 
 app.listen(port, ()=>{
     console.log('App is listening in port: ' + port);
 });
 
-function noticiassearch(x){
-    console.log(x);
-    
-
-};
 
 app.get('/', function(req,res){
 //    res.send('works');
